@@ -42,6 +42,24 @@ INSERT INTO employees VALUES (
 	'1704', 'Uddin', 'Mahir', '104', 'mahir@gmail.com', '8', '1056', 'Web Developer'
 ) 
 
+SELECT * FROM `products` WHERE buyPrice BETWEEN 50 AND 100;
+SELECT DISTINCT productLine FROM `products`;
+SELECT * FROM `employees` ORDER BY lastName DESC;
+SELECT * FROM `products` ORDER BY buyPrice ASC;
+SELECT CONCAT(firstName, " ", lastName) AS 'Full Name' FROM `employees`;
+SELECT *FROM `employees` LIMIT 5;
+SELECT *FROM `employees` LIMIT 5 OFFSET 6;
+
+
+
+SELECT customer.customerNumber,customerName, country, quantityOrdered, status FROM customers, orders, orderdetails WHERE orders.customerNumber = customer.customerName AND orders.orderNumber = orderdetails.orderNumber;
+SELECT * FROM `orders` WHERE orderDate BETWEEN '2003-01-01' AND '2003-01-31'; 
+
+SELECT * FROM `customers` WHERE country = 'France' OR country = 'Australia';
+SELECT MAX(amount) AS 'Max Amount' FROM `payments`;
+SELECT customerNumber, SUM(amount) AS 'Total Amount' FROM `payments` WHERE customerNumber = 103;
+
+
 
 
 
